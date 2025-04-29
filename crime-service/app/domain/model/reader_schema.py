@@ -1,12 +1,14 @@
 from dataclasses import dataclass
-from flask import json
+import json
+
 import pandas as pd
+import os
 
 @dataclass
 class ReaderSchema:
         
     def __init__(self):
-        self._context = 'C:\\Users\\bitcamp\\Documents\\crime250220\\com\\junyeongc\\datas\\'
+        self._context = os.path.join(os.getcwd(), 'app', 'store') + os.sep
         self._fname = ''
 
     @property
